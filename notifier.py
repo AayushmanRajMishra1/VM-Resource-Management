@@ -1,14 +1,9 @@
 import requests
-import os
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+BOT_TOKEN = "8795872225:AAGZeBYkXCMvt3iQQ5CeSt8McqupNDarzhk"
+CHAT_ID = "8199128489"
 
 def send_whatsapp(msg):
-    if not BOT_TOKEN or not CHAT_ID:
-        print("Token or Chat ID missing")
-        return
-
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
     try:
@@ -18,3 +13,4 @@ def send_whatsapp(msg):
         })
     except Exception as e:
         print("Telegram error:", e)
+        
